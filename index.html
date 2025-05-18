@@ -1,304 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KRM Mobile Tires Landing Page</title>
-    <link rel="stylesheet" href="krmstyle.css">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="shortcut icon" href="KRM MOBILE TIRES LOGO.png">
-    <script src="https://unpkg.com/scrollreveal"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KRM MOBILE TIRES</title>
+  <link rel="stylesheet" href="krmstyle.css" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet" />
 </head>
 <body>
-    <header>
-        <a href="#" class="logo"><img src="KRM MOBILE TIRES LOGO.png" alt="car logo"></a>
-
-        <i class='bx bx-menu' id="menu-icon"></i>
-
-        <ul class="navbar">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#tires">Tires</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#reviews">Reviews</a></li>
-        </ul>
-
-        <div class="header-btn">
-         <!--   <a href="#" class="sign-up">Sign Up</a>-->
-            <a href=tel:"3016534980" class="sign-in">Call Now</a>
-        </div>
-    </header>
-
-    <section class="home" id="home">
-        <div class="text">
-          <h1><span>Looking</span> for <br>New Tires</h1>
-          <p>Where Will the Road Take You? Get Tires Now!</p>
-          <!-- App store icons (commented out) -->
-        </div>
-      
-        <div class="form-container">
-          <form id="krmForm">
-            <div class="input-box">
-              <input type="text" id="VehicleMake" name="VehicleMake" placeholder="Vehicle Make" required />
-            </div>
-      
-            <div class="input-box">
-              <input type="text" id="VehicleModel" name="VehicleModel" placeholder="Vehicle Model" required />
-            </div>
-      
-            <div class="input-box">
-              <input type="text" id="TireSize" name="TireSize" placeholder="Tire Size" required />
-            </div>
-      
-            <div class="input-box">
-              <input type="email" id="Email" name="Email" placeholder="Your Email" required />
-            </div>
-      
-            <div class="input-box">
-              <input type="tel" id="Phone" name="Phone" placeholder="Phone Number" required />
-            </div>
-      
-            <button type="submit" class="btn">Submit</button>
-          </form>
-      
-          <script>
-            const form = document.getElementById('krmForm');
-      
-            form.addEventListener('submit', async (e) => {
-              e.preventDefault();
-      
-              const data = {
-                VehicleMake: form.VehicleMake.value,
-                VehicleModel: form.VehicleModel.value,
-                TireSize: form.TireSize.value,
-                Email: form.Email.value,
-                Phone: form.Phone.value
-              };
-      
-              const response = await fetch(
-                'https://prod-97.westus.logic.azure.com:443/workflows/993251100e304dad9f30cc6b73d1025d/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=gJagS3CZlkttt1JNmXJ6fZFBV3FXqIrlFpy3Ex4-BO4',
-                {
-                  method: 'POST',
-                  headers: { 'Content-Type': 'application/json' },
-                  body: JSON.stringify(data)
-                }
-              );
-      
-              if (response.ok) {
-                alert('Form submitted successfully!');
-                form.reset();
-              } else {
-                alert('There was an error submitting the form.');
-              }
-            });
-          </script>
-        </div>
-      </section>
-      
-
-    <section class="tires" id="tires">
-        <div class="heading">
-            <span>How it's works</span>
-            <h1>Submit form to get a Quote within an hour</h1>
-        </div>
-        <div class="ride-container">
-            <div class="box">
-                <i class="ri-money-dollar-box-fill"></i>
-                <h2>Get a Quote</h2>
-                <p>Browse our wide selection of tires </p>
-            </div>
-
-            <div class="box">
-                <i class="ri-add-box-fill"></i>
-                <h2>Choose your tires</h2>
-                <p>Choose tires that fits your needs and budget</p>
-            </div>
-
-            <div class="box">
-                <i class="ri-exchange-box-fill"></i>
-                <h2>Deliver in Days </h2>
-                <p>Enter your details for a a quick delivery </p>
-            </div>
-        </div>
-    </section>
-
-    <section class="services" id="services">
-        <div class="heading">
-            <span>Best Services</span>
-            <h1>Explore out Top Deals <br> From Top Rated Tires </h1>
-        </div>
-        <div class="services-container">
-            <div class="box">
-                <div class="box-img"><img src="AdobeStock_510670364_Editorial_Use_Only.jpeg" alt="car image"></div>
-                <p>2025</p>
-                <h3>Run Flats</h3>
-                <h2>245/45 R18 | Starting at  <span>/$380</span></h2>
-                <a href=tel:"3016534980" class="btn">Call Now</a>
-            </div>
-
-            <div class="box">
-                <div class="box-img"><img src="hondatires.jpeg" alt="car image"></div>
-                <p>2025</p>
-                <h3>Car</h3>
-                <h2>215/70 R15 | Starting at <span>/$100</span></h2>
-                <a href=tel:"3016534980" class="btn">Call Now</a>
-            </div>
-
-            <div class="box">
-                <div class="box-img"><img src="SUVTires.jpeg" alt="car image"></div>
-                <p>2025</p>
-                <h3>SUV</h3>
-                <h2>245/65 R17 | Starting at<span>/$130</span></h2>
-                <a href=tel:"3016534980" class="btn">Call Now</a>
-            </div>
-
-            <div class="box">
-                <div class="box-img"><img src="Suburban Tires.jpeg" alt="car image"></div>
-                <p>2023</p>
-                <h3>Trucks</h3>
-                <h2>275/55 R20 | Starting at <span>/$258</span></h2>
-                <a href=tel:"3016534980" class="btn">Call Now</a>
-            </div>
-
-            <div class="box">
-                <div class="box-img"><img src="SEMiTruckTries.jpeg" alt="car image"></div>
-                <p>2023</p>
-                <h3>Semi Trucks</h3>
-                <h2>285/75R24.5| Starting at <span>/$330</span></h2>
-                <a href=tel:"3016534980" class="btn">Call Now</a>
-            </div>
-
-            <div class="box">
-                <div class="box-img"><img src="SpecialityTires.jpeg" alt="car image"></div>
-                <p>2025</p>
-                <h3>Speciality</h3>
-                <h2>Call for quote | Check Inventory <span>/$$$</span></h2>
-                <a href=tel:"3016534980" class="btn">Call Now</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="about" id="about">
-        <div class="heading">
-            <span>About Us</span>
-            <h1>Best Customer Experience</h1>
-        </div>
-        <div class="about-container">
-            <div class="about-img"><img src="AdobeStock_313789346.jpeg" alt="about banner"></div>
-            <div class="about-text">
-                <span>About us</span>
-                <p>At KRM Mobile Tire Services, we specialize in finding the best quotes for new tires, offering unparalleled quality and affordability. From small cars to the largest vehicles—including farm equipment, tractors, trailers, and more—we guarantee the best price for all tire types.</p>
-                <p>Serving the Orlando, Florida area and Maryland, we deliver your tires right to your location for maximum convenience. Additionally, we provide reliable roadside assistance across Maryland, ensuring you're never stranded. At KRM, we're dedicated to keeping you moving safely and affordably, no matter what you drive!</p>
-                <a href="#" class="btn">Learn More</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="reviews" id="reviews">
-        <div class="heading">
-            <span>Reviews</span>
-            <h1>What our Customers Say</h1>
-        </div>
-        <div class="reviews-container">
-            <div class="box">
-                <div class="rev-img"><img src="https://i.postimg.cc/fWCHgFxb/rev1.jpg" alt="review image"></div>
-                <h2>Alan Doe</h2>
-                <div class="stars">
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-half-fill"></i>
-                </div>
-                <p>"I was impressed with the condition of my vehicle after getting new tires here. It drove smoothly, felt more secure on the road, and made my trip so much more enjoyable knowing I had reliable, quality tires. Highly recommend their service!"</p>
-            </div>
-
-            <div class="box">
-                <div class="rev-img"><img src="https://i.postimg.cc/YSxgCc2G/rev2.jpg" alt="review image"></div>
-                <h2>John Ford</h2>
-                <div class="stars">
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
-                </div>
-                <p> "I needed new tires fast, and this place offered the best value for my money. Their prices were competitive, and the overall service experience was top-notch. They got me back on the road quickly and safely. I wouldn’t hesitate to come back for my next set!"</p>
-            </div>
-
-            <div class="box">
-                <div class="rev-img"><img src="https://i.postimg.cc/Qtx7B6V6/rev3.jpg" alt="review image"></div>
-                <h2>Katharina Moss</h2>
-                <div class="stars">
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
-                </div>
-                <p> "The online booking process was quick and simple. They found me the best quote for new tires, scheduled everything fast, and even delivered them right to me! No hidden fees, no stress—just great service from start to finish. I’ll definitely be using them again!"</p>
-        </div>
-    </section>
-
-    <section class="newsletter">
-        <h2>Subscribe to Newsletter</h2>
-        <div class="box">
-            <input type="email" id="newsletterEmail" placeholder="Enter your email" required>
-            <a href="#" class="btn" id="subscribeBtn">Subscribe</a>
-        </div>
-        <p id="newsletterMessage"></p>
-    </section>
-
-    <script>
-        document.getElementById("subscribeBtn").addEventListener("click", function (e) {
-          e.preventDefault();
-      
-          const email = document.getElementById("newsletterEmail").value;
-          const messageElement = document.getElementById("newsletterMessage");
-      
-          if (!email) {
-            messageElement.innerText = "Please enter an email address.";
-            return;
-          }
-      
-          fetch("https://prod-10.westus.logic.azure.com:443/workflows/e5acfdab6e8145e184280da353f927af/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=UEOiK5hVt9x7NEvcV1sMoaSWaza9n_0EyoRD7hQVXcY", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify({ Email: email }) // <-- Match the SharePoint column name exactly
-          })
-          .then(response => {
-            if (response.ok) {
-              messageElement.innerText = "Successfully subscribed!";
-              document.getElementById("newsletterEmail").value = "";
-            } else {
-              return response.text().then(text => {
-                throw new Error(text);
-              });
-            }
-          })
-          .catch(error => {
-            console.error("Error:", error);
-            messageElement.innerText = "An error occurred. Please try again.";
-          });
-        });
-      </script>
-      
-    
-
-        
-    
-    <div class="copyright">
-        <p>&#169; <span>KRM Mobile Tires</span> All rights reserved</p>
-        <div class="social">
-            <a href="#"><i class="ri-facebook-fill"></i></a>
-
-            <a href="#"><i class="ri-instagram-line"></i></a>
-        </div>
+  <!-- Home -->
+  <section class="home" id="home">
+    <div class="home-text">
+      <h1>Mobile Tire <br />Services</h1>
+      <p>Available 24/7 | Emergency Roadside Tire Services | All Vehicle Types</p>
+      <a href="tel:3016534980" class="btn">Call Now</a>
     </div>
+  </section>
 
-    <script src="krmjavas.js"></script>
+  <!-- Tires Section -->
+  <section class="tires" id="tires">
+    <div class="heading">
+      <span>Our Inventory</span>
+      <h2>Types of Tires</h2>
+    </div>
+    <div class="tires-container">
+      <div class="box">
+        <img src="hondatires.jpeg" alt="Car Tires" />
+        <h3>Car Tires</h3>
+        <span>Passenger Vehicles</span>
+      </div>
+      <div class="box">
+        <img src="SUVTires.jpeg" alt="SUV Tires" />
+        <h3>SUV Tires</h3>
+        <span>Sport Utility Vehicles</span>
+      </div>
+      <div class="box">
+        <img src="Suburban Tires.jpeg" alt="Suburban Tires" />
+        <h3>Suburban Tires</h3>
+        <span>Full-Size Vehicles</span>
+      </div>
+      <div class="box">
+        <img src="AdobeStock_313789346.jpeg" alt="Truck Tires" />
+        <h3>Truck Tires</h3>
+        <span>Pickup Trucks</span>
+      </div>
+      <div class="box">
+        <img src="SEMiTruckTries.jpeg" alt="Semi Tires" />
+        <h3>Semi Tires</h3>
+        <span>Commercial Vehicles</span>
+      </div>
+      <div class="box">
+        <img src="SpecialityTires.jpeg" alt="Specialty Tires" />
+        <h3>Specialty Tires</h3>
+        <span>Performance, Off-Road, and More</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="services" id="services">
+    <div class="heading">
+      <span>Services</span>
+      <h2>What We Offer</h2>
+    </div>
+    <div class="services-container">
+      <div class="s-box">
+        <img src="AdobeStock_510670364_Editorial_Use_Only.jpeg" alt="Roadside Assistance" />
+        <h3>Roadside Assistance</h3>
+        <p>Fast tire replacement services wherever you are.</p>
+      </div>
+      <div class="s-box">
+        <img src="KRM MOBILE TIRES LOGO.png" alt="Tire Installation" />
+        <h3>Tire Installation</h3>
+        <p>Professional tire fitting for any vehicle type.</p>
+      </div>
+      <div class="s-box">
+        <img src="KRM MOBILE TIRES LOGO.png" alt="Tire Maintenance" />
+        <h3>Tire Maintenance</h3>
+        <p>Pressure checks, rotations, and general tire care.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <div class="about-img">
+      <img src="KRM MOBILE TIRES LOGO.png" alt="About KRM" />
+    </div>
+    <div class="about-text">
+      <span>About Us</span>
+      <h2>Reliable Mobile Tire Solutions</h2>
+      <p>We provide around-the-clock tire services for all vehicles in the DMV area. Whether it’s emergency assistance or scheduled maintenance, we’ve got you covered.</p>
+      <a href="tel:3016534980" class="btn">Contact Us</a>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="reviews" id="reviews">
+    <div class="heading">
+      <span>Customer Feedback</span>
+      <h2>What Our Clients Say</h2>
+    </div>
+    <div class="reviews-container">
+      <div class="r-box">
+        <p>Fast, reliable, and courteous service. Got my tire changed in no time.</p>
+        <h4>– John D.</h4>
+      </div>
+      <div class="r-box">
+        <p>Excellent roadside assistance late at night. Highly recommend!</p>
+        <h4>– Maria S.</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter">
+    <h2>Subscribe For Updates</h2>
+    <form method="post" action="https://prod-23.westus.logic.azure.com:443/workflows/b450bbcb79a944d3bbad449fba87e850/triggers/manual/paths/invoke/restapi/v1/emailnews/?api-version=2016-10-01&sp=...">
+      <input type="email" name="email" placeholder="Enter Your Email" required />
+      <button type="submit" class="btn">Subscribe</button>
+    </form>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <h2>Book Tire Service</h2>
+    <form method="post" action="https://prod-23.westus.logic.azure.com:443/workflows/b450bbcb79a944d3bbad449fba87e850/triggers/manual/paths/invoke/restapi/v1/krmtires/?api-version=2016-10-01&sp=...">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="tel" name="phone" placeholder="Phone Number" required />
+      <input type="text" name="vehicle" placeholder="Vehicle Type" required />
+      <textarea name="message" rows="4" placeholder="Describe the service needed" required></textarea>
+      <button type="submit" class="btn">Request Service</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 KRM Mobile Tires. All rights reserved.</p>
+    <a href="tel:3016534980" class="btn">Call Us: (301) 653-4980</a>
+  </footer>
+
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="krmjavas.js"></script>
 </body>
 </html>
